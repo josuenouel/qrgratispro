@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6BL8DHV9WW"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-6BL8DHV9WW');
+    </script>
+
+    <meta charset="UTF-8">
+    
+    <meta name="google-site-verification" content="SVTdAIgCY3TE3hmQBqEt1YU6QxyhR9cM0GnvJeJ575c" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Generador QR Wifi y Menús | QR Gratis Pro</title>
+    <meta name="description" content="Generador de Códigos QR Gratis y Profesional. Wifi, Menús y Enlaces. Sin caducidad.">
+    <meta name="author" content="QR Gratis Pro">
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%232563eb'/><text x='50' y='60' dominant-baseline='middle' text-anchor='middle' font-size='70'>⚡</text></svg>">
+
+    <style>
+        /* ESTILOS PRO */
+        :root { --primary: #2563eb; --bg-color: #f8fafc; --text-main: #1e293b; --text-light: #64748b; --white: #ffffff; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: var(--bg-color); margin: 0; color: var(--text-main); line-height: 1.6; display: flex; flex-direction: column; align-items: center; }
+        
+        /* HEADER & NAV SUPERIOR */
+        header { width: 100%; background: var(--white); border-bottom: 1px solid #e2e8f0; padding-bottom: 10px; text-align: center; position: sticky; top: 0; z-index: 100; }
+        .logo-container { padding: 15px 0; }
+        .logo { font-size: 22px; font-weight: 800; color: var(--primary); text-decoration: none; }
+        
+        .main-nav {
+            display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; padding: 0 10px;
+        }
+        .nav-link {
+            text-decoration: none; color: #475569; font-size: 14px; font-weight: 600;
+            padding: 6px 12px; border-radius: 20px; transition: 0.2s;
+            display: flex; align-items: center; gap: 5px;
+        }
+        .nav-link:hover { background-color: #eff6ff; color: var(--primary); }
+        .nav-link.active { background-color: #eff6ff; color: var(--primary); }
+
+        .hero { text-align: center; padding: 40px 20px 20px; max-width: 800px; }
+        .hero h1 { font-size: 2.2rem; margin-bottom: 10px; color: #0f172a; }
+        .hero p { font-size: 1.1rem; color: var(--text-light); margin-top: 0; }
+        .highlight { color: var(--primary); }
+        .tool-card { background: var(--white); border-radius: 16px; width: 90%; max-width: 500px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); margin-bottom: 40px; border: 1px solid #f1f5f9; overflow: hidden; }
+        .tabs { display: flex; background: #f1f5f9; padding: 5px; }
+        .tab-btn { flex: 1; padding: 15px; border: none; background: transparent; cursor: pointer; font-weight: 600; color: var(--text-light); border-radius: 8px; transition: 0.2s; font-size: 15px; }
+        .tab-btn.active { background: var(--white); color: var(--primary); box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .tool-content { padding: 30px; }
+        .form-section { display: none; }
+        .form-section.active { display: block; animation: fadeIn 0.5s; }
+        label { font-weight: 600; font-size: 14px; display: block; margin-bottom: 8px; margin-top: 15px; color: #334155; }
+        input, select { width: 100%; padding: 12px; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 16px; box-sizing: border-box; }
+        input:focus, select:focus { border-color: var(--primary); outline: none; }
+        input[type="color"] { height: 45px; padding: 2px; cursor: pointer; background: white; }
+        .row { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .btn-main { background-color: var(--primary); color: white; border: none; padding: 15px; font-size: 18px; font-weight: 700; border-radius: 10px; cursor: pointer; width: 100%; margin-top: 25px; }
+        .btn-main:hover { background-color: #1d4ed8; }
+        #capture-area { margin-top: 20px; padding: 20px; border-radius: 12px; display: flex; flex-direction: column; align-items: center; background: white; border: 1px solid #e2e8f0; }
+        #qr-label-output { margin-top: 10px; font-size: 18px; font-weight: 700; text-align: center; word-break: break-word; font-family: sans-serif; }
+        .download-options { display: none; margin-top: 20px; border-top: 1px solid #e2e8f0; padding-top: 20px; width: 100%; }
+        .download-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+        .btn-dl { padding: 10px; border: none; border-radius: 6px; cursor: pointer; color: white; font-weight: 600; font-size: 14px; }
+        .dl-png { background: #10b981; } .dl-jpg { background: #f59e0b; } .dl-pdf { background: #ef4444; }
+        .ad-banner { width: 100%; max-width: 728px; height: 90px; background: #e2e8f0; display: flex; align-items: center; justify-content: center; color: #94a3b8; margin: 20px auto; border-radius: 8px; border: 1px dashed #cbd5e1; }
+        .seo-content { max-width: 800px; width: 90%; margin-bottom: 40px; text-align: left; }
+        .seo-box { background: white; padding: 30px; border-radius: 12px; border: 1px solid #e2e8f0; margin-top: 20px; }
+        
+        /* BOTONES IDIOMA */
+        .lang-container { margin-bottom: 30px; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; max-width: 600px; }
+        .lang-btn-switch {
+            background: white; border: 1px solid #e2e8f0; padding: 8px 12px;
+            border-radius: 20px; cursor: pointer; font-size: 13px;
+            color: var(--text-light); transition: 0.3s;
+        }
+        .lang-btn-switch:hover { background: #f1f5f9; }
+        .lang-btn-switch.active { background: var(--primary); color: white; border-color: var(--primary); }
+
+        footer { background: white; width: 100%; padding: 30px 0; border-top: 1px solid #e2e8f0; text-align: center; font-size: 13px; color: var(--text-light); }
+        footer a { color: #64748b; text-decoration: none; margin: 0 5px; font-weight: 500; }
+        footer a:hover { color: var(--primary); text-decoration: underline; }
+        
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <a href="index.html" class="logo">⚡ QR Gratis Pro</a>
+        </div>
+        
+        <nav class="main-nav">
+            <a href="index.html" class="nav-link active" data-i18n="nav_home">🏠 Inicio</a>
+            <a href="pdf.html" class="nav-link" data-i18n="nav_pdf">📄 PDF</a>
+            <a href="radio.html" class="nav-link" data-i18n="nav_radio">📻 Radio</a>
+            <a href="blog.html" class="nav-link" data-i18n="nav_blog">📰 Blog</a>
+            <a href="contacto.html" class="nav-link" data-i18n="nav_contact">📩 Contacto</a>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h1><span data-i18n="hero_title1">Generador de QR</span> <span class="highlight" data-i18n="hero_title2">Wifi y Menús</span></h1>
+        <p data-i18n="hero_subtitle">Herramienta gratuita, sin registros y sin caducidad.</p>
+    </div>
+
+    <div class="ad-banner" data-i18n="adsense_space">[Espacio para Anuncio Google AdSense]</div>
+
+    <div class="tool-card">
+        <div class="tabs">
+            <button class="tab-btn active" onclick="switchTab('url', this)" data-i18n="tab_web">🔗 Web</button>
+            <button class="tab-btn" onclick="switchTab('wifi', this)" data-i18n="tab_wifi">📶 Wifi</button>
+            <button class="tab-btn" onclick="switchTab('menu', this)" data-i18n="tab_menu">🍽️ Menú</button>
+        </div>
+
+        <div class="tool-content">
+            <div id="form-url" class="form-section active">
+                <label data-i18n="label_url">Pega tu enlace o texto:</label>
+                <input type="text" id="url-input" data-i18n-placeholder="ph_url" placeholder="Ej: https://google.com" />
+            </div>
+
+            <div id="form-wifi" class="form-section">
+                <label data-i18n="label_ssid">Nombre de la Red (SSID):</label>
+                <input type="text" id="wifi-ssid" data-i18n-placeholder="ph_ssid" placeholder="Ej: MiCasa_Wifi_5G" />
+                <label data-i18n="label_pass">Contraseña:</label>
+                <input type="text" id="wifi-pass" data-i18n-placeholder="ph_pass" placeholder="Tu contraseña del wifi" />
+                <label data-i18n="label_security">Seguridad:</label>
+                <select id="wifi-type">
+                    <option value="WPA">WPA/WPA2 (Estándar)</option>
+                    <option value="WEP">WEP</option>
+                    <option value="nopass" data-i18n="opt_nopass">Sin contraseña (Abierta)</option>
+                </select>
+                <p style="font-size: 12px; color: #64748b; margin-top: 5px;" data-i18n="wifi_note">*Tu visita escaneará el código y se conectará automáticamente.</p>
+            </div>
+
+            <div id="form-menu" class="form-section">
+                <div style="background: #eff6ff; border: 1px solid #bfdbfe; padding: 15px; border-radius: 8px; margin-bottom: 15px;">
+                    <p style="margin: 0; font-size: 13px; color: #1e40af;" data-i18n="menu_guide">
+                        <strong>💡 Guía para Menús PDF:</strong><br>Sube tu PDF a Google Drive, obtén el enlace de 'Compartir' y pégalo aquí.
+                    </p>
+                </div>
+                <label data-i18n="label_menu">Pega el enlace de tu PDF:</label>
+                <input type="text" id="menu-input" data-i18n-placeholder="ph_menu" placeholder="Ej: https://drive.google.com/..." />
+            </div>
+
+            <hr style="border: 0; border-top: 1px solid #f1f5f9; margin: 20px 0;">
+
+            <div class="row">
+                <div><label data-i18n="label_color">Color:</label><input type="color" id="color-dark" value="#000000"></div>
+                <div><label data-i18n="label_bg">Fondo:</label><input type="color" id="color-light" value="#ffffff"></div>
+            </div>
+            <label data-i18n="label_text_below">Nombre abajo (Opcional):</label>
+            <input type="text" id="label-input" data-i18n-placeholder="ph_text_below" placeholder="Ej: Wifi Gratis" maxlength="25"/>
+
+            <button class="btn-main" onclick="generarQR()" data-i18n="btn_generate">✨ Generar QR</button>
+
+            <div id="capture-area">
+                <div id="qrcode"></div>
+                <div id="qr-label-output"></div>
+            </div>
+
+            <div class="download-options" id="download-section">
+                <div class="download-grid">
+                    <button class="btn-dl dl-png" onclick="descargarImagen('png')">PNG</button>
+                    <button class="btn-dl dl-jpg" onclick="descargarImagen('jpg')">JPG</button>
+                    <button class="btn-dl dl-pdf" onclick="descargarPDF()">PDF</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ad-banner" data-i18n="adsense_space">[Espacio para Anuncio Google AdSense]</div>
+
+    <div class="seo-content">
+        <div class="seo-box">
+            <h2 data-i18n="seo_h2">Generador de Códigos QR Gratis y Sin Caducidad</h2>
+            <p data-i18n="seo_p1">Bienvenido a QR Gratis Pro, la herramienta definitiva para crear códigos QR profesionales sin pagar suscripciones.</p>
+            <h3 data-i18n="seo_h3_1">¿Por qué elegirnos?</h3>
+            <ul>
+                <li data-i18n="seo_li_1">✅ <strong>Sin Caducidad:</strong> Funcionan para siempre.</li>
+                <li data-i18n="seo_li_2">✅ <strong>100% Gratis:</strong> Sin registros.</li>
+                <li data-i18n="seo_li_3">✅ <strong>Privacidad:</strong> No guardamos tus datos.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="lang-container">
+        <button class="lang-btn-switch active" onclick="setLanguage('es', this)">🇪🇸 Español</button>
+        <button class="lang-btn-switch" onclick="setLanguage('en', this)">🇺🇸 English</button>
+        <button class="lang-btn-switch" onclick="setLanguage('pt', this)">🇧🇷 Português</button>
+        <button class="lang-btn-switch" onclick="setLanguage('fr', this)">🇫🇷 Français</button>
+        <button class="lang-btn-switch" onclick="setLanguage('de', this)">🇩🇪 Deutsch</button>
+        <button class="lang-btn-switch" onclick="setLanguage('jp', this)">🇯🇵 日本語</button>
+        <button class="lang-btn-switch" onclick="setLanguage('cn', this)">🇨🇳 中文</button>
+    </div>
+
+    <footer>
+        <p data-i18n="footer_copy">© 2025 QR Gratis Pro. Hecho para tu negocio.</p>
+        <p style="margin-top: 15px; border-top: 1px solid #f1f5f9; padding-top: 15px;">
+            <a href="pdf.html" data-i18n="nav_pdf">📄 PDF</a> | 
+            <a href="radio.html" data-i18n="nav_radio">📻 Radio</a> | 
+            <a href="blog.html" data-i18n="nav_blog">📰 Blog</a> | 
+            <a href="contacto.html" data-i18n="nav_contact">📩 Contacto</a> | 
+            <a href="privacidad.html" data-i18n="footer_privacy">Privacidad</a>
+        </p>
+    </footer>
+
+    <div id="cookie-banner" style="display: none; position: fixed; bottom: 0; left: 0; width: 100%; background: #1e293b; color: white; padding: 15px; text-align: center; z-index: 9999; box-shadow: 0 -2px 10px rgba(0,0,0,0.1);">
+        <p style="margin: 0; font-size: 13px; display: inline-block; padding-right: 15px; line-height: 1.5;">
+            🍪 Usamos cookies para mejorar tu experiencia y mostrar anuncios. 
+            <a href="privacidad.html" style="color: #60a5fa; text-decoration: underline;">Leer más</a>
+        </p>
+        <button onclick="acceptCookies()" style="background: #2563eb; color: white; border: none; padding: 8px 20px; border-radius: 20px; cursor: pointer; font-weight: bold; font-size: 13px; margin-top: 5px;">Aceptar</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <script>
+        // COOKIES LOGIC
+        function checkCookies() {
+            if (!localStorage.getItem('cookiesAccepted')) {
+                document.getElementById('cookie-banner').style.display = 'block';
+            }
+        }
+        function acceptCookies() {
+            localStorage.setItem('cookiesAccepted', 'true');
+            document.getElementById('cookie-banner').style.display = 'none';
+        }
+        window.addEventListener('load', function() { setTimeout(checkCookies, 1000); });
+
+        // TRADUCCIONES
+        const translations = {
+            es: {
+                nav_home: "🏠 Inicio", nav_pdf: "📄 PDF", nav_radio: "📻 Radio", nav_blog: "📰 Blog", nav_contact: "📩 Contacto",
+                hero_title1: "Generador de QR", hero_title2: "Wifi y Menús", hero_subtitle: "Herramienta gratuita, sin registros y sin caducidad.",
+                tab_web: "🔗 Web", tab_wifi: "📶 Wifi", tab_menu: "🍽️ Menú",
+                label_url: "Pega tu enlace o texto:", ph_url: "Ej: https://google.com",
+                label_ssid: "Nombre de la Red (SSID):", ph_ssid: "Ej: MiCasa_Wifi_5G",
+                label_pass: "Contraseña:", ph_pass: "Tu contraseña del wifi",
+                label_security: "Seguridad:", opt_nopass: "Sin contraseña (Abierta)",
+                wifi_note: "*Tu visita escaneará el código y se conectará automáticamente.",
+                menu_guide: "<strong>💡 Guía para Menús PDF:</strong><br>Sube tu PDF a Google Drive, obtén el enlace de 'Compartir' y pégalo aquí.",
+                label_menu: "Pega el enlace de tu PDF:", ph_menu: "Ej: https://drive.google.com/...",
+                label_color: "Color:", label_bg: "Fondo:",
+                label_text_below: "Nombre abajo (Opcional):", ph_text_below: "Ej: Wifi Gratis",
+                btn_generate: "✨ Generar QR",
+                adsense_space: "[Espacio para Anuncio Google AdSense]",
+                seo_h2: "Generador de Códigos QR Gratis y Sin Caducidad",
+                seo_p1: "Bienvenido a QR Gratis Pro, la herramienta definitiva para crear códigos QR profesionales sin pagar suscripciones.",
+                seo_h3_1: "¿Por qué elegirnos?",
+                seo_li_1: "✅ <strong>Sin Caducidad:</strong> Funcionan para siempre.",
+                seo_li_2: "✅ <strong>100% Gratis:</strong> Sin registros.",
+                seo_li_3: "✅ <strong>Privacidad:</strong> No guardamos tus datos.",
+                footer_copy: "© 2025 QR Gratis Pro. Hecho para tu negocio.",
+                footer_privacy: "Política de Privacidad",
+                alert_url: "Por favor ingresa un enlace.", alert_menu: "Por favor pega el enlace de tu PDF.", alert_wifi: "Escribe el nombre de la red Wifi."
+            },
+            en: {
+                nav_home: "🏠 Home", nav_pdf: "📄 PDF", nav_radio: "📻 Radio", nav_blog: "📰 Blog", nav_contact: "📩 Contact",
+                hero_title1: "QR Generator", hero_title2: "Wifi & Menu", hero_subtitle: "Free tool, no sign-ups, no expiration.",
+                tab_web: "🔗 Web", tab_wifi: "📶 Wifi", tab_menu: "🍽️ Menu",
+                label_url: "Paste your link or text:", ph_url: "Ex: https://google.com",
+                label_ssid: "Network Name (SSID):", ph_ssid: "Ex: MyHome_Wifi_5G",
+                label_pass: "Password:", ph_pass: "Your Wifi password",
+                label_security: "Security:", opt_nopass: "No password (Open)",
+                wifi_note: "*Your guest will scan the code and connect automatically.",
+                menu_guide: "<strong>💡 PDF Menu Guide:</strong><br>Upload your PDF to Google Drive, get the 'Share' link, and paste it here.",
+                label_menu: "Paste your PDF link:", ph_menu: "Ex: https://drive.google.com/...",
+                label_color: "Color:", label_bg: "Background:",
+                label_text_below: "Label below (Optional):", ph_text_below: "Ex: Free Wifi",
+                btn_generate: "✨ Generate QR",
+                adsense_space: "[Google AdSense Ad Space]",
+                seo_h2: "Free QR Code Generator - No Expiration",
+                seo_p1: "Welcome to QR Gratis Pro, the ultimate tool for creating professional QR codes without paying monthly fees.",
+                seo_h3_1: "Why choose us?",
+                seo_li_1: "✅ <strong>No Expiration:</strong> They work forever.",
+                seo_li_2: "✅ <strong>100% Free:</strong> No sign-ups needed.",
+                seo_li_3: "✅ <strong>Privacy:</strong> We don't store your data.",
+                footer_copy: "© 2025 QR Gratis Pro. Made for your business.",
+                footer_privacy: "Privacy Policy",
+                alert_url: "Please enter a link.", alert_menu: "Please paste your PDF link.", alert_wifi: "Enter the Wifi network name."
+            },
+            pt: {
+                nav_home: "🏠 Início", nav_pdf: "📄 PDF", nav_radio: "📻 Rádio", nav_blog: "📰 Blog", nav_contact: "📩 Contato",
+                hero_title1: "Gerador de QR", hero_title2: "Wifi e Menu", hero_subtitle: "Ferramenta gratuita, sem cadastro, sem validade.",
+                tab_web: "🔗 Web", tab_wifi: "📶 Wifi", tab_menu: "🍽️ Menu",
+                label_url: "Cole seu link ou texto:", ph_url: "Ex: https://google.com",
+                label_ssid: "Nome da Rede (SSID):", ph_ssid: "Ex: MinhaCasa_Wifi",
+                label_pass: "Senha:", ph_pass: "Sua senha do wifi",
+                label_security: "Segurança:", opt_nopass: "Sem senha (Aberta)",
+                wifi_note: "*O visitante escaneia e conecta automaticamente.",
+                menu_guide: "<strong>💡 Guia para Menu PDF:</strong><br>Suba seu PDF no Google Drive, pegue o link 'Compartilhar' e cole aqui.",
+                label_menu: "Cole o link do PDF:", ph_menu: "Ex: https://drive.google.com/...",
+                label_color: "Cor:", label_bg: "Fundo:",
+                label_text_below: "Texto abaixo (Opcional):", ph_text_below: "Ex: Wifi Grátis",
+                btn_generate: "✨ Gerar QR",
+                adsense_space: "[Espaço para Anúncio Google AdSense]",
+                seo_h2: "Gerador de QR Code Grátis e Sem Validade",
+                seo_p1: "Bem-vindo ao QR Gratis Pro, a ferramenta definitiva para criar códigos QR profissionais sem pagar mensalidades.",
+                seo_h3_1: "Por que nos escolher?",
+                seo_li_1: "✅ <strong>Sem Validade:</strong> Funcionam para sempre.",
+                seo_li_2: "✅ <strong>100% Grátis:</strong> Sem cadastros.",
+                seo_li_3: "✅ <strong>Privacidade:</strong> Não salvamos seus dados.",
+                footer_copy: "© 2025 QR Gratis Pro. Feito para o seu negócio.",
+                footer_privacy: "Política de Privacidade",
+                alert_url: "Por favor, insira um link.", alert_menu: "Por favor, cole o link do seu PDF.", alert_wifi: "Digite o nome da rede Wifi."
+            },
+            fr: {
+                nav_home: "🏠 Accueil", nav_pdf: "📄 PDF", nav_radio: "📻 Radio", nav_blog: "📰 Blog", nav_contact: "📩 Contact",
+                hero_title1: "Générateur QR", hero_title2: "Wifi et Menu", hero_subtitle: "Outil gratuit, sans inscription, sans expiration.",
+                tab_web: "🔗 Web", tab_wifi: "📶 Wifi", tab_menu: "🍽️ Menu",
+                label_url: "Collez votre lien ou texte:", ph_url: "Ex: https://google.com",
+                label_ssid: "Nom du réseau (SSID):", ph_ssid: "Ex: MonWifi_5G",
+                label_pass: "Mot de passe:", ph_pass: "Votre mot de passe wifi",
+                label_security: "Sécurité:", opt_nopass: "Pas de mot de passe (Ouvert)",
+                wifi_note: "*Votre invité scanne et se connecte automatiquement.",
+                menu_guide: "<strong>💡 Guide Menu PDF:</strong><br>Téléchargez votre PDF sur Google Drive, copiez le lien 'Partager' et collez-le ici.",
+                label_menu: "Collez le lien PDF:", ph_menu: "Ex: https://drive.google.com/...",
+                label_color: "Couleur:", label_bg: "Fond:",
+                label_text_below: "Texte ci-dessous (Optionnel):", ph_text_below: "Ex: Wifi Gratuit",
+                btn_generate: "✨ Générer QR",
+                adsense_space: "[Espace publicitaire Google AdSense]",
+                seo_h2: "Générateur de QR Code Gratuit et Sans Expiration",
+                seo_p1: "Bienvenue sur QR Gratis Pro, l'outil ultime pour créer des QR codes professionnels sans frais mensuels.",
+                seo_h3_1: "Pourquoi nous choisir ?",
+                seo_li_1: "✅ <strong>Sans expiration:</strong> Ils fonctionnent pour toujours.",
+                seo_li_2: "✅ <strong>100% Gratuit:</strong> Aucune inscription requise.",
+                seo_li_3: "✅ <strong>Confidentialité:</strong> Nous ne stockons pas vos données.",
+                footer_copy: "© 2025 QR Gratis Pro. Fait pour votre entreprise.",
+                footer_privacy: "Politique de Confidentialité",
+                alert_url: "Veuillez entrer un lien.", alert_menu: "Veuillez coller le lien de votre PDF.", alert_wifi: "Entrez le nom du réseau Wifi."
+            },
+            de: {
+                nav_home: "🏠 Start", nav_pdf: "📄 PDF", nav_radio: "📻 Radio", nav_blog: "📰 Blog", nav_contact: "📩 Kontakt",
+                hero_title1: "QR Generator", hero_title2: "WLAN & Menüs", hero_subtitle: "Kostenloses Tool, keine Anmeldung, kein Ablaufdatum.",
+                tab_web: "🔗 Web", tab_wifi: "📶 WLAN", tab_menu: "🍽️ Menü",
+                label_url: "Link oder Text einfügen:", ph_url: "Bsp: https://google.com",
+                label_ssid: "Netzwerkname (SSID):", ph_ssid: "Bsp: MeinWLAN",
+                label_pass: "Passwort:", ph_pass: "Dein WLAN-Passwort",
+                label_security: "Sicherheit:", opt_nopass: "Kein Passwort (Offen)",
+                wifi_note: "*Ihr Gast scannt und verbindet sich automatisch.",
+                menu_guide: "<strong>💡 PDF-Menü Anleitung:</strong><br>Laden Sie Ihr PDF auf Google Drive hoch, kopieren Sie den 'Teilen'-Link und fügen Sie ihn hier ein.",
+                label_menu: "PDF-Link einfügen:", ph_menu: "Bsp: https://drive.google.com/...",
+                label_color: "Farbe:", label_bg: "Hintergrund:",
+                label_text_below: "Text unten (Optional):", ph_text_below: "Bsp: Gratis WLAN",
+                btn_generate: "✨ QR Erstellen",
+                adsense_space: "[Google AdSense Werbefläche]",
+                seo_h2: "Kostenloser QR-Code Generator ohne Ablaufdatum",
+                seo_p1: "Willkommen bei QR Gratis Pro, dem ultimativen Tool zum Erstellen professioneller QR-Codes ohne monatliche Gebühren.",
+                seo_h3_1: "Warum uns wählen?",
+                seo_li_1: "✅ <strong>Kein Ablaufdatum:</strong> Funktionieren für immer.",
+                seo_li_2: "✅ <strong>100% Kostenlos:</strong> Keine Registrierung.",
+                seo_li_3: "✅ <strong>Datenschutz:</strong> Wir speichern Ihre Daten nicht.",
+                footer_copy: "© 2025 QR Gratis Pro. Gemacht für Ihr Geschäft.",
+                footer_privacy: "Datenschutzbestimmungen",
+                alert_url: "Bitte geben Sie einen Link ein.", alert_menu: "Bitte fügen Sie Ihren PDF-Link ein.", alert_wifi: "Geben Sie den WLAN-Namen ein."
+            },
+            jp: {
+                nav_home: "🏠 ホーム", nav_pdf: "📄 PDF", nav_radio: "📻 ラジオ", nav_blog: "📰 ブログ", nav_contact: "📩 お問い合わせ",
+                hero_title1: "QRコード作成", hero_title2: "Wi-Fi & メニュー", hero_subtitle: "完全無料・登録不要・有効期限なし",
+                tab_web: "🔗 Web", tab_wifi: "📶 Wi-Fi", tab_menu: "🍽️ メニュー",
+                label_url: "リンクまたはテキストを貼り付け:", ph_url: "例: https://google.com",
+                label_ssid: "ネットワーク名 (SSID):", ph_ssid: "例: MyHome_Wifi_5G",
+                label_pass: "パスワード:", ph_pass: "Wi-Fiのパスワード",
+                label_security: "セキュリティ:", opt_nopass: "パスワードなし (公開)",
+                wifi_note: "*スキャンすると自動的に接続されます。",
+                menu_guide: "<strong>💡 PDFメニューガイド:</strong><br>GoogleドライブにPDFをアップし、「共有」リンクをここに貼り付けてください。",
+                label_menu: "PDFリンクを貼り付け:", ph_menu: "例: https://drive.google.com/...",
+                label_color: "色:", label_bg: "背景:",
+                label_text_below: "下部のテキスト (任意):", ph_text_below: "例: フリーWi-Fi",
+                btn_generate: "✨ 作成する",
+                adsense_space: "[広告スペース]",
+                seo_h2: "有効期限なしの無料QRコード作成ツール",
+                seo_p1: "QR Gratis Proへようこそ。月額料金なしでプロ仕様のQRコードを作成できる究極のツールです。",
+                seo_h3_1: "選ばれる理由",
+                seo_li_1: "✅ <strong>有効期限なし:</strong> 永久に使えます。",
+                seo_li_2: "✅ <strong>完全無料:</strong> 面倒な登録は不要です。",
+                seo_li_3: "✅ <strong>プライバシー:</strong> データを保存しません。",
+                footer_copy: "© 2025 QR Gratis Pro. ビジネスのために。",
+                footer_privacy: "プライバシーポリシー",
+                alert_url: "リンクを入力してください。", alert_menu: "PDFのリンクを貼り付けてください。", alert_wifi: "Wi-Fi名を入力してください。"
+            },
+            cn: {
+                nav_home: "🏠 首页", nav_pdf: "📄 PDF", nav_radio: "📻 电台", nav_blog: "📰 博客", nav_contact: "📩 联系",
+                hero_title1: "二维码生成器", hero_title2: "Wifi 与 菜单", hero_subtitle: "免费工具，无需注册，永久有效",
+                tab_web: "🔗 网址", tab_wifi: "📶 Wifi", tab_menu: "🍽️ 菜单",
+                label_url: "粘贴链接或文本:", ph_url: "例: https://google.com",
+                label_ssid: "网络名称 (SSID):", ph_ssid: "例: MyHome_Wifi_5G",
+                label_pass: "密码:", ph_pass: "Wifi 密码",
+                label_security: "安全性:", opt_nopass: "无密码 (开放)",
+                wifi_note: "*扫描后将自动连接网络。",
+                menu_guide: "<strong>💡 PDF 菜单指南:</strong><br>将 PDF 上传至 Google Drive，复制“分享”链接并粘贴到此处。",
+                label_menu: "粘贴 PDF 链接:", ph_menu: "例: https://drive.google.com/...",
+                label_color: "颜色:", label_bg: "背景:",
+                label_text_below: "底部文字 (可选):", ph_text_below: "例: 免费 Wifi",
+                btn_generate: "✨ 生成二维码",
+                adsense_space: "[广告位]",
+                seo_h2: "免费且永久有效的二维码生成器",
+                seo_p1: "欢迎使用 QR Gratis Pro，无需支付月费即可创建专业二维码的最佳工具。",
+                seo_h3_1: "为什么选择我们？",
+                seo_li_1: "✅ <strong>永久有效:</strong> 二维码永不过期。",
+                seo_li_2: "✅ <strong>100% 免费:</strong> 无需注册。",
+                seo_li_3: "✅ <strong>隐私保护:</strong> 我们不存储您的数据。",
+                footer_copy: "© 2025 QR Gratis Pro. 助力您的业务。",
+                footer_privacy: "隐私政策",
+                alert_url: "请输入链接。", alert_menu: "请粘贴您的 PDF 链接。", alert_wifi: "请输入 Wifi 名称。"
+            }
+        };
+
+        let currentLang = 'es';
+
+        function setLanguage(lang, btn) {
+            currentLang = lang;
+            document.querySelectorAll('.lang-btn-switch').forEach(b => b.classList.remove('active'));
+            if(btn) btn.classList.add('active');
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                el.innerHTML = translations[lang][el.getAttribute('data-i18n')];
+            });
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+                el.placeholder = translations[lang][el.getAttribute('data-i18n-placeholder')];
+            });
+        }
+
+        let currentMode = 'url';
+        function switchTab(mode, btn) {
+            currentMode = mode;
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            document.querySelectorAll('.form-section').forEach(f => f.classList.remove('active'));
+            document.getElementById('form-' + mode).classList.add('active');
+            document.getElementById("download-section").style.display = "none";
+            document.getElementById("qrcode").innerHTML = "";
+            document.getElementById("qr-label-output").innerText = "";
+        }
+
+        function generarQR() {
+            let textoFinal = "";
+            let colorDark = document.getElementById("color-dark").value;
+            let colorLight = document.getElementById("color-light").value;
+            let labelText = document.getElementById("label-input").value;
+            let alerts = translations[currentLang];
+
+            if (currentMode === 'url') {
+                textoFinal = document.getElementById("url-input").value;
+                if (!textoFinal) return alert(alerts.alert_url);
+            } else if (currentMode === 'menu') {
+                textoFinal = document.getElementById("menu-input").value;
+                if (!textoFinal) return alert(alerts.alert_menu);
+            } else if (currentMode === 'wifi') {
+                let ssid = document.getElementById("wifi-ssid").value;
+                let pass = document.getElementById("wifi-pass").value;
+                let type = document.getElementById("wifi-type").value;
+                if (!ssid) return alert(alerts.alert_wifi);
+                textoFinal = `WIFI:S:${ssid};T:${type};P:${pass};;`;
+            }
+
+            let qrcodeContainer = document.getElementById("qrcode");
+            qrcodeContainer.innerHTML = "";
+            try {
+                new QRCode(qrcodeContainer, { text: textoFinal, width: 256, height: 256, colorDark : colorDark, colorLight : colorLight, correctLevel : QRCode.CorrectLevel.H });
+                if(labelText) {
+                    let labelOut = document.getElementById("qr-label-output");
+                    labelOut.innerText = labelText; labelOut.style.color = colorDark;
+                }
+                setTimeout(() => { document.getElementById("download-section").style.display = "block"; }, 300);
+            } catch (e) { alert("Error: Text too long."); }
+        }
+
+        function descargarImagen(tipo) { html2canvas(document.getElementById("capture-area")).then(canvas => { let a = document.createElement('a'); a.download = `qr-pro.${tipo}`; a.href = canvas.toDataURL(tipo==='png'?"image/png":"image/jpeg"); a.click(); }); }
+        function descargarPDF() { const { jsPDF } = window.jspdf; html2canvas(document.getElementById("capture-area")).then(canvas => { const pdf = new jsPDF({ format: [canvas.width+40, canvas.height+40] }); pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 20, 20, canvas.width, canvas.height); pdf.save(`qr-pro.pdf`); }); }
+    </script>
+</body>
+</html>
